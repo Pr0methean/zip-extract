@@ -10,15 +10,20 @@ keywords = ["zip", "archive", "extract"]
 categories = ["compression"]
 
 [features]
-"deflate" = ["zip/deflate", "zip/deflate64"]
-"deflate-miniz" = ["zip/deflate-miniz"]
-"default-zlib" = ["zip/deflate-zlib"]
-"bzip2" = ["zip/bzip2"]
-"default" = ["bzip2", "deflate"]
+aes-crypto = ["zip_next/aes-crypto"]
+deflate = ["zip_next/deflate"]
+deflate64 = ["zip_next/deflate64"]
+deflate-miniz = ["zip_next/deflate-miniz"]
+deflate-zlib = ["zip_next/deflate-zlib"]
+unreserved = ["zip_next/unreserved"]
+bzip2 = ["zip_next/bzip2"]
+time = ["zip_next/time"]
+zstd = ["zip_next/zstd"]
+default = ["aes-crypto", "bzip2", "deflate", "deflate64", "zstd"]
 
 [dependencies]
 log = "0.4"
-zip = { git = "https://github.com/anatawa12/zip-rs", branch = "deflate64" }
+zip_next = { git = "https://github.com/anatawa12/zip-rs", branch = "deflate64-next" }
 encoding_rs = "0.8"
 thiserror = "1.0"
 
