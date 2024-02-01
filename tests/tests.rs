@@ -4,9 +4,9 @@ use dir_diff;
 use std::io::Cursor;
 use std::path::PathBuf;
 use std::sync::Once;
-use zip::result::ZipError::InvalidArchive;
 use zip_extract::ZipExtractError::Zip;
 use zip_extract::{extract, ZipExtractError};
+use zip_next::result::ZipError::InvalidArchive;
 
 static INIT: Once = Once::new();
 
